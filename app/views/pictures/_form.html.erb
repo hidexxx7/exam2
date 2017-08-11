@@ -1,0 +1,11 @@
+<%= form_for(@picture) do |f| %>
+  <%= f.label :タイトル %><br>
+  <%= f.text_field :title, class: 'form-control' %>
+  <br>
+  <%= f.label :内容 %>
+  <%= f.text_field :content, class: 'form-control' %>
+  <br><br>
+  <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
+  <% end %><br><br>
+
+<%= link_to "写真一覧画面にもどる", pictures_path %>

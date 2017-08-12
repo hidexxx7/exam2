@@ -8,8 +8,10 @@
     <div class="row">
       <h4><strong><%= picture.title %></strong></h4>
       <p><%= picture.content %></p>
+      <h4><%= profile_img(picture.user) %>　投稿者：<%= picture.user.name %></h4>
       <%= link_to "編集", edit_picture_path(picture.id), class: 'btn btn-default btn-sm btn-success' %>
       <%= link_to "削除", picture_path(picture.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
+
     </div>
     <% end %>
   </div>

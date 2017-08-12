@@ -7,6 +7,11 @@
     <% @pictures.each do |picture| %>
     <div class="row">
       <h4><strong><%= picture.title %></strong></h4>
+      <p class="viewsize">
+      <% if picture.image? %>
+      <%= image_tag(picture.image) %>
+      <% end %>
+      </p>
       <p><%= picture.content %></p>
       <h4><%= profile_img(picture.user) %>　投稿者：<%= picture.user.name %></h4>
       <%= link_to "編集", edit_picture_path(picture.id), class: 'btn btn-default btn-sm btn-success' %>

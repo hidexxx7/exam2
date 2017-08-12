@@ -1,10 +1,22 @@
 <%= form_for(@picture) do |f| %>
+
+  <% if @picture.errors.any? %>
+      <div id="error_explanation">
+        <h3>エラー：画像を選択してください</h3>
+      </div>
+  <% end %>
+
+  <br>
   <%= f.label :タイトル %><br>
   <%= f.text_field :title, class: 'form-control' %>
   <br>
-  <%= f.label :内容 %>
+  <%= f.label :画像を選択 %>
+  <%= f.file_field :image %>
+  <%= f.hidden_field :image_cache %>
+  <br>
+  <%= f.label :コメント %>
   <%= f.text_field :content, class: 'form-control' %>
-  <br><br>
+  <br>
   <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
   <% end %><br><br>
 

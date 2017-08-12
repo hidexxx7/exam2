@@ -3,6 +3,8 @@ class PicturesController < ApplicationController
 
   def index
     @pictures = Picture.all
+    #binding.pry #デバックモードの起動
+    #raise #意図的なエラー発生
   end
 
   def new
